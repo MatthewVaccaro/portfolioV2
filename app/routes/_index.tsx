@@ -1,6 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import burnIn from "assets/burnIn.png";
-import { motion, useScroll, useTime, useTransform } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { BlurIn } from "~/components/BlurIn";
 import { FeatureCell } from "~/components/FeatureCell";
