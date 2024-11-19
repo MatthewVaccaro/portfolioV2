@@ -1,6 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import burnIn from "assets/burnIn.png";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useInView, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { BlurIn } from "~/components/BlurIn";
 import { FeatureCell } from "~/components/FeatureCell";
@@ -17,6 +17,7 @@ import adventureIcon from "assets/adventureIcon.svg";
 import arrowRightIcon from "assets/arrowRightIcon.svg";
 import { Container } from "~/components/Container";
 import compass from "assets/compass.svg";
+import posthog from "posthog-js";
 
 export const meta: MetaFunction = () => {
   return [
@@ -26,6 +27,20 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const activityRef = useRef(null);
+  const activityIsInView = useInView(activityRef, { once: true });
+
+  useEffect(() => {
+    if (activityIsInView) {
+      console.log("running activityIsInView catpure call");
+      posthog.capture("depth_points", {
+        property: {
+          point: "activityIsInView",
+        },
+      });
+    }
+  }, [activityIsInView]);
+
   const topBurnRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: topBurnRef,
@@ -180,7 +195,7 @@ export default function Index() {
 
       <div className="bg-black w-full px-4 pt-20">
         <Container className="text-white text-center mb-12">
-          <h2> Activity </h2>
+          <h2 ref={activityRef}> Activity </h2>
           <p className="opacity-70">
             What I’ve built professionally in the last three years
           </p>
