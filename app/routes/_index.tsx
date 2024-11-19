@@ -17,7 +17,7 @@ import adventureIcon from "assets/adventureIcon.svg";
 import arrowRightIcon from "assets/arrowRightIcon.svg";
 import { Container } from "~/components/Container";
 import compass from "assets/compass.svg";
-import posthog from "posthog-js";
+import { posthog } from "posthog-js";
 
 export const meta: MetaFunction = () => {
   return [
@@ -99,7 +99,7 @@ export default function Index() {
           <Container className="flex justify-center sm:justify-between w-full">
             <div className="w-0 sm:w-1/5" />
             <div>
-              <div className="flex gap-2 border-[1px] border-brand-orange rounded-md py-1 px-2">
+              <div className="flex gap-2 border-[1px] border-opacity-30 rounded-full border-brand-orange py-1 px-2">
                 <img
                   src={adventureIcon}
                   alt="Two mountain peaks that are outlined in orange"
@@ -120,7 +120,7 @@ export default function Index() {
           </Container>
         </nav>
 
-        <p className="text-center opacity-60 mt-14"> Matt Vaccaro </p>
+        <p className="text-center opacity-60 md:mt-32"> Matt Vaccaro </p>
         <div className="mx-auto relative w-full">
           <motion.div
             style={{
@@ -176,8 +176,8 @@ export default function Index() {
           alt="A mixture of colors that looks like the screen has pixels that are burned out"
         />
       </section>
-      <div className=" bg-black h-[200vh] sm:h-screen mt-[-1px] px-10 pt-20 flex justify-center">
-        <div className="max-w-[600px]">
+      <div className=" bg-black h-[150vh] sm:h-screen mt-[-1px] px-10 pt-20 flex justify-center">
+        <div className="max-w-[600px] pt-9">
           <BlurIn>
             In the summer of 2015 there was once a timid dreamer who dreamt of
             being a part of the tech industry. By a stroke of luck or fate he
@@ -193,7 +193,7 @@ export default function Index() {
         </div>
       </div>
 
-      <div className="bg-black w-full px-4 pt-20">
+      <div className="bg-black w-full px-4">
         <Container className="text-white text-center mb-12">
           <h2 ref={activityRef}> Activity </h2>
           <p className="opacity-70">
@@ -207,7 +207,7 @@ export default function Index() {
               place="Brigit"
               img={homeRedesign}
               color="#24956A"
-              details="Allowed all three teams to separate ownership, reduced view from 1500+ to 184 lines, and cut loading speed by 62%"
+              details="Increased activation rate by 3%, reduced view from 1500+ to 184 lines, and cut loading speed by 19%"
               alt="UI that shows the new home screen that was created for Brigit"
             />
           </div>
@@ -331,7 +331,10 @@ export default function Index() {
         />
       </div>
       <Container className="overflow-hidden">
-        <h1 className="overflow-hidden w-full text-center">{count}</h1>
+        <h1 className="overflow-hidden w-full text-center">
+          {count}
+          <sup>º</sup>
+        </h1>
         <motion.div
           style={{ rotate }}
           className="max-w-[375px] md:max-w-[432px]  mx-auto rounded-full"
@@ -342,11 +345,10 @@ export default function Index() {
           />
         </motion.div>
         <BlurIn tint="light">
-          My experience as a Product Designer allows me to know exactly what
-          direction the ship is heading. While my technical knowledge knows
-          where the icebergs rest. My goal is always to help my team navigate
-          even the most turbulent waters, focused on islands full of glorious
-          value.
+          Being a Product Engineer means I understand the direction the ship is
+          going and where the icebergs rest. This vision allows me to help my
+          team understand the problem space with much more clarity and move with
+          tailwinds. Constantly keeping focus on user value and needs.
         </BlurIn>
         <div className="mt-8 flex justify-center mb-[180px]">
           <a
@@ -370,7 +372,7 @@ export default function Index() {
             <p className="note"> Made in Texas in 2024 </p>
           </div>
           <div>
-            <div className="flex gap-2 border-[1px] border-brand-orange rounded-md py-1 px-2">
+            <div className="flex gap-2 border-[1px] border-opacity-30 rounded-full border-brand-orange py-1 px-2">
               <img
                 src={adventureIcon}
                 alt="Two mountain peaks that are outlined in orange"
