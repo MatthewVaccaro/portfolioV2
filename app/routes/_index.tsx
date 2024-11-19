@@ -348,7 +348,7 @@ export default function Index() {
           Being a Product Engineer means I understand the direction the ship is
           going and where the icebergs rest. This vision allows me to help my
           team understand the problem space with much more clarity and move with
-          tailwinds. Constantly keeping focus on user value and needs.
+          the tailwinds. All while remaining focused on validating user needs.
         </BlurIn>
         <div className="mt-8 flex justify-center mb-[180px]">
           <a
