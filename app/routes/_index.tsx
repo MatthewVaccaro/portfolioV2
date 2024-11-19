@@ -197,7 +197,7 @@ export default function Index() {
         <Container className="text-white text-center mb-12">
           <h2 ref={activityRef}> Activity </h2>
           <p className="opacity-70">
-            What I’ve built professionally in the last three years
+            I{"'"}ve been very engaged these last three years
           </p>
         </Container>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 max-w-[933px] mx-auto pb-16">
