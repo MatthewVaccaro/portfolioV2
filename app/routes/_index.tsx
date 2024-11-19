@@ -176,7 +176,7 @@ export default function Index() {
           alt="A mixture of colors that looks like the screen has pixels that are burned out"
         />
       </section>
-      <div className=" bg-black h-[200vh] sm:h-screen px-10 pt-20 flex justify-center">
+      <div className=" bg-black h-[200vh] sm:h-screen mt-[-1px] px-10 pt-20 flex justify-center">
         <div className="max-w-[600px]">
           <BlurIn>
             In the summer of 2015 there was once a timid dreamer who dreamt of
